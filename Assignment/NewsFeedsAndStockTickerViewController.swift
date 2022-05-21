@@ -53,6 +53,9 @@ extension NewsFeedsAndStockTickerViewController {
                 section = self.getStockTickerSection()
             case 1:
                 section = self.getNewsFeedSection()
+            case 2:
+                section = self.verticalLayout()
+                
             default:
                 section = self.getOthersNewsFeedSection()
             }
@@ -102,19 +105,38 @@ extension NewsFeedsAndStockTickerViewController {
         return section
     }
     
+    
+    
+    private func verticalLayout() -> NSCollectionLayoutSection? {
+
+    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                  heightDimension: .fractionalHeight(1.0))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+            let groupHeight = NSCollectionLayoutDimension.fractionalWidth(1)
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                   heightDimension: groupHeight)
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+            let section = NSCollectionLayoutSection(group: group)
+            section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        section.boundarySupplementaryItems = getHeader()
+    return section
+}
+    
     private func getOthersNewsFeedSection() -> NSCollectionLayoutSection? {
         //create item
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10)
         
         //create group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.22))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.4))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         //create section
         let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
+    
+        section.orthogonalScrollingBehavior = .groupPaging
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         section.boundarySupplementaryItems = getHeader()
@@ -144,8 +166,8 @@ extension NewsFeedsAndStockTickerViewController {
                 
             case 0: reuseIdentifier =  StockCell.reuseIdentifier
             case 1: reuseIdentifier =  NewsCell.reuseIdentifier
-//            case 2: reuseIdentifier = RecomentationsCell.reuseIdentifier
-            default: reuseIdentifier = StockCell.reuseIdentifier
+            case 2: reuseIdentifier = OtherNewsCell.reuseIdentifier
+            default: reuseIdentifier = NewsCell.reuseIdentifier
             }
             
             if let feed = item as? Feed {
@@ -166,6 +188,18 @@ extension NewsFeedsAndStockTickerViewController {
                 }else if let newFeed = feed.news {
                 
                     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as?  NewsCell else {
+                        return nil
+                    }
+                    cell.showNews(news: newFeed)
+
+    //                let section = FeedsManager.Section.allCases[indexPath.section]
+    //                cell.showNews(news: FeedsManager.feeds[section]?[indexPath.item])
+                    
+                    return cell
+                
+                }else if let newFeed = feed.otherNews {
+                    
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as?  OtherNewsCell else {
                         return nil
                     }
                     cell.showNews(news: newFeed)

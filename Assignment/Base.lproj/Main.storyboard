@@ -117,14 +117,66 @@
                                             <outlet property="newsImage" destination="kfk-7n-DqN" id="Ab7-39-r2Z"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Wgb-GS-2Qt">
-                                        <rect key="frame" x="94.5" y="340" width="225" height="211"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="OtherNewsCell" reuseIdentifier="OtherNewsCell" id="Wgb-GS-2Qt" customClass="OtherNewsCell" customModule="Assignment" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="340" width="404" height="436"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4dj-cB-Ysw">
-                                            <rect key="frame" x="0.0" y="0.0" width="225" height="211"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="404" height="436"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fre-qI-gUP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="404" height="218"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="300" id="8r1-rS-Vz7"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sadfsdfadsgasdgsadfgsadfgsfdgasdgsdfgsdfgsdfgsdfgsdfgsdfgsdfgdfsg" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJP-JR-lb4">
+                                                    <rect key="frame" x="0.0" y="226" width="404" height="41"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHs-Tn-09D">
+                                                    <rect key="frame" x="0.0" y="275" width="404" height="54"/>
+                                                    <string key="text">sdgsdgdfsgfdgsdfgdfsgfsdg fdggsdfgsfdg dfsgsdfg dfsgsdfgdfsgsdgsdgdfsgfdgsdfgdfsgfsdg fdggsdfgsfdg dfsgsdfg dfsgsdfgdfsg sdgsdgdfsgfdgsdfgdfsgfsdg fdggsdfgsfdg dfsgsdfg dfsgsdfgdfsgsdgsdgdfsgfdgsdfgdfsgfsdg fdggsdfgsfdg dfsgsdfg dfsgsdfgdfsg sdgsdgdfsgfdgsdfgdfsgfsdg fdggsdfgsfdg dfsgsdfg dfsgsdfgdfsgsdgsdgdfsgfdgsdfgdfsgfsdg fdggsdfgsfdg dfsgsdfg dfsgsdfgdfsg</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="21/05/2022" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6y-GG-0yW">
+                                                    <rect key="frame" x="0.0" y="407.5" width="404" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.5" id="V61-mR-akw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JJP-JR-lb4" firstAttribute="top" secondItem="Fre-qI-gUP" secondAttribute="bottom" constant="8" id="0Nl-uB-WRV"/>
+                                                <constraint firstItem="JJP-JR-lb4" firstAttribute="leading" secondItem="Fre-qI-gUP" secondAttribute="leading" id="3Pg-oL-t0N"/>
+                                                <constraint firstItem="JJP-JR-lb4" firstAttribute="trailing" secondItem="Fre-qI-gUP" secondAttribute="trailing" id="BGH-p5-qEC"/>
+                                                <constraint firstItem="FHs-Tn-09D" firstAttribute="leading" secondItem="JJP-JR-lb4" secondAttribute="leading" id="F0O-el-2gC"/>
+                                                <constraint firstAttribute="bottom" secondItem="G6y-GG-0yW" secondAttribute="bottom" constant="8" id="Igx-0v-qXr"/>
+                                                <constraint firstItem="Fre-qI-gUP" firstAttribute="leading" secondItem="4dj-cB-Ysw" secondAttribute="leading" id="PoC-0c-rXl"/>
+                                                <constraint firstItem="Fre-qI-gUP" firstAttribute="height" secondItem="4dj-cB-Ysw" secondAttribute="height" multiplier="0.5" id="UDQ-K1-elT"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fre-qI-gUP" secondAttribute="trailing" id="W49-cn-7vn"/>
+                                                <constraint firstItem="Fre-qI-gUP" firstAttribute="top" secondItem="4dj-cB-Ysw" secondAttribute="top" id="cSA-kw-GGA"/>
+                                                <constraint firstItem="FHs-Tn-09D" firstAttribute="trailing" secondItem="Fre-qI-gUP" secondAttribute="trailing" id="h85-Ir-0sT"/>
+                                                <constraint firstItem="FHs-Tn-09D" firstAttribute="top" secondItem="JJP-JR-lb4" secondAttribute="bottom" constant="8" id="mFM-is-dMN"/>
+                                                <constraint firstItem="G6y-GG-0yW" firstAttribute="leading" secondItem="Fre-qI-gUP" secondAttribute="leading" id="qv6-n3-cHV"/>
+                                                <constraint firstItem="G6y-GG-0yW" firstAttribute="trailing" secondItem="Fre-qI-gUP" secondAttribute="trailing" id="ver-Vf-nhI"/>
+                                                <constraint firstItem="Fre-qI-gUP" firstAttribute="width" secondItem="4dj-cB-Ysw" secondAttribute="width" id="w9g-uM-jZF"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="225" height="211"/>
+                                        <size key="customSize" width="404" height="436"/>
+                                        <connections>
+                                            <outlet property="lblDate" destination="G6y-GG-0yW" id="ez5-op-nsA"/>
+                                            <outlet property="lblDescription" destination="FHs-Tn-09D" id="SYT-oV-OUw"/>
+                                            <outlet property="lblTitle" destination="JJP-JR-lb4" id="SxY-0l-Ua7"/>
+                                            <outlet property="newsImage" destination="Fre-qI-gUP" id="4Gi-fA-bnU"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

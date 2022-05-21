@@ -22,6 +22,7 @@
 		52FA2E022838F3C50020B395 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA2E012838F3C50020B395 /* UIImageViewExtensions.swift */; };
 		52FA2E0628391B470020B395 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA2E0528391B470020B395 /* Feed.swift */; };
 		52FA2E08283937FB0020B395 /* TitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA2E07283937FB0020B395 /* TitleHeaderView.swift */; };
+		52FA2E0A28393B420020B395 /* OtherNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA2E0928393B420020B395 /* OtherNewsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		52FA2E012838F3C50020B395 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		52FA2E0528391B470020B395 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		52FA2E07283937FB0020B395 /* TitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderView.swift; sourceTree = "<group>"; };
+		52FA2E0928393B420020B395 /* OtherNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherNewsCell.swift; sourceTree = "<group>"; };
 		543DDB1EBD5E773D307E8442 /* Pods_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73FC546C0C969EE30BD60B8B /* Pods-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment.debug.xcconfig"; path = "Target Support Files/Pods-Assignment/Pods-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		FD2DC9268023493DCF9538C4 /* Pods-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment.release.xcconfig"; path = "Target Support Files/Pods-Assignment/Pods-Assignment.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				52E2338428385295005A0CEF /* StockCell.swift */,
 				52FA2DFE2838E3D50020B395 /* NewsCell.swift */,
 				52FA2E07283937FB0020B395 /* TitleHeaderView.swift */,
+				52FA2E0928393B420020B395 /* OtherNewsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				52E2336A28384675005A0CEF /* NewsFeedsAndStockTickerViewController.swift in Sources */,
 				52E2338528385295005A0CEF /* StockCell.swift in Sources */,
 				52E2336628384675005A0CEF /* AppDelegate.swift in Sources */,
+				52FA2E0A28393B420020B395 /* OtherNewsCell.swift in Sources */,
 				52FA2E022838F3C50020B395 /* UIImageViewExtensions.swift in Sources */,
 				52E2336828384675005A0CEF /* SceneDelegate.swift in Sources */,
 				52FA2E08283937FB0020B395 /* TitleHeaderView.swift in Sources */,
