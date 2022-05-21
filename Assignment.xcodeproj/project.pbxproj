@@ -12,14 +12,7 @@
 		52E2336D28384675005A0CEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E2336B28384675005A0CEF /* Main.storyboard */; };
 		52E2336F28384676005A0CEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E2336E28384676005A0CEF /* Assets.xcassets */; };
 		52E2337228384676005A0CEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E2337028384676005A0CEF /* LaunchScreen.storyboard */; };
-		52E2337B283849EE005A0CEF /* FeedsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2337A283849EE005A0CEF /* FeedsManager.swift */; };
-		52E2338028384BC9005A0CEF /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2337F28384BC9005A0CEF /* Stock.swift */; };
-		52E2338228384C9E005A0CEF /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2338128384C9E005A0CEF /* NewsFeed.swift */; };
-		52E2338528385295005A0CEF /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2338428385295005A0CEF /* StockCell.swift */; };
-		52FA2DFF2838E3D50020B395 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA2DFE2838E3D50020B395 /* NewsCell.swift */; };
-		52FA2E0628391B470020B395 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA2E0528391B470020B395 /* Feed.swift */; };
 		52FA2E08283937FB0020B395 /* TitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA2E07283937FB0020B395 /* TitleHeaderView.swift */; };
-		52FA2E0A28393B420020B395 /* OtherNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA2E0928393B420020B395 /* OtherNewsCell.swift */; };
 		52FA2E1D28394F220020B395 /* UINavigationController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA2E0B28394F210020B395 /* UINavigationController + Extension.swift */; };
 		52FA2E1E28394F220020B395 /* UIScrollView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA2E0C28394F210020B395 /* UIScrollView + Extension.swift */; };
 		52FA2E1F28394F220020B395 /* DateFormatter + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA2E0D28394F210020B395 /* DateFormatter + Extension.swift */; };
@@ -95,14 +88,7 @@
 		52E2336E28384676005A0CEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52E2337128384676005A0CEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52E2337328384676005A0CEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52E2337A283849EE005A0CEF /* FeedsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsManager.swift; sourceTree = "<group>"; };
-		52E2337F28384BC9005A0CEF /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
-		52E2338128384C9E005A0CEF /* NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
-		52E2338428385295005A0CEF /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
-		52FA2DFE2838E3D50020B395 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
-		52FA2E0528391B470020B395 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		52FA2E07283937FB0020B395 /* TitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderView.swift; sourceTree = "<group>"; };
-		52FA2E0928393B420020B395 /* OtherNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherNewsCell.swift; sourceTree = "<group>"; };
 		52FA2E0B28394F210020B395 /* UINavigationController + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController + Extension.swift"; sourceTree = "<group>"; };
 		52FA2E0C28394F210020B395 /* UIScrollView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView + Extension.swift"; sourceTree = "<group>"; };
 		52FA2E0D28394F210020B395 /* DateFormatter + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter + Extension.swift"; sourceTree = "<group>"; };
@@ -220,7 +206,6 @@
 				52FA2E002838F3A90020B395 /* Extensions */,
 				52E233832838525F005A0CEF /* Views */,
 				52E2337C28384A47005A0CEF /* Models */,
-				52E23379283849E1005A0CEF /* DataManager */,
 				52FA2E50283953EF0020B395 /* Base */,
 				52E2336528384675005A0CEF /* AppDelegate.swift */,
 				52E2336728384675005A0CEF /* SceneDelegate.swift */,
@@ -232,14 +217,6 @@
 			path = Assignment;
 			sourceTree = "<group>";
 		};
-		52E23379283849E1005A0CEF /* DataManager */ = {
-			isa = PBXGroup;
-			children = (
-				52E2337A283849EE005A0CEF /* FeedsManager.swift */,
-			);
-			path = DataManager;
-			sourceTree = "<group>";
-		};
 		52E2337C28384A47005A0CEF /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,9 +226,6 @@
 				52FA2E48283953490020B395 /* NewFeedVO.swift */,
 				52FA2E46283953490020B395 /* SourceVO.swift */,
 				52FA2E47283953490020B395 /* StockVO.swift */,
-				52E2337F28384BC9005A0CEF /* Stock.swift */,
-				52E2338128384C9E005A0CEF /* NewsFeed.swift */,
-				52FA2E0528391B470020B395 /* Feed.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,10 +233,7 @@
 		52E233832838525F005A0CEF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				52E2338428385295005A0CEF /* StockCell.swift */,
-				52FA2DFE2838E3D50020B395 /* NewsCell.swift */,
 				52FA2E07283937FB0020B395 /* TitleHeaderView.swift */,
-				52FA2E0928393B420020B395 /* OtherNewsCell.swift */,
 				52FA2E2F28394FB60020B395 /* CardView.swift */,
 				52FA2E312839500A0020B395 /* RoundedUIImageView.swift */,
 				52FA2E33283950380020B395 /* RoundedCornerUIButton.swift */,
@@ -633,7 +604,6 @@
 				52FA2E64283955AE0020B395 /* ErrorHandlerView.swift in Sources */,
 				52FA2E4C283953490020B395 /* StockVO.swift in Sources */,
 				52FA2E2928394F220020B395 /* UICollectionView + Extension.swift in Sources */,
-				52E2338228384C9E005A0CEF /* NewsFeed.swift in Sources */,
 				52FA2E4D283953490020B395 /* NewFeedVO.swift in Sources */,
 				52FA2E5D283953EF0020B395 /* BaseViewController.swift in Sources */,
 				52FA2E5B283953EF0020B395 /* BaseViewModel.swift in Sources */,
@@ -644,22 +614,18 @@
 				52FA2E2D28394F220020B395 /* UIViewController + extension.swift in Sources */,
 				52FA2E2B28394F220020B395 /* UIDevice + Extension.swift in Sources */,
 				52FA2E2028394F220020B395 /* String + Extension.swift in Sources */,
-				52FA2E0628391B470020B395 /* Feed.swift in Sources */,
 				52FA2E43283952CC0020B395 /* ErrorType.swift in Sources */,
 				52FA2E34283950380020B395 /* RoundedCornerUIButton.swift in Sources */,
 				52FA2E40283952CC0020B395 /* ApiClient.swift in Sources */,
 				52FA2E5E283953EF0020B395 /* BaseView.swift in Sources */,
 				52FA2E7D283989220020B395 /* StockPriceItemCollectionViewCell.swift in Sources */,
-				52E2338528385295005A0CEF /* StockCell.swift in Sources */,
 				52E2336628384675005A0CEF /* AppDelegate.swift in Sources */,
 				52FA2E77283989220020B395 /* HomeViewModel.swift in Sources */,
 				52FA2E2A28394F220020B395 /* UIImageView + Extension.swift in Sources */,
 				52FA2E49283953490020B395 /* ArticleVO.swift in Sources */,
-				52FA2E0A28393B420020B395 /* OtherNewsCell.swift in Sources */,
 				52FA2E08283937FB0020B395 /* TitleHeaderView.swift in Sources */,
 				52FA2E2828394F220020B395 /* Data + Extension.swift in Sources */,
 				52FA2E1F28394F220020B395 /* DateFormatter + Extension.swift in Sources */,
-				52E2338028384BC9005A0CEF /* Stock.swift in Sources */,
 				52FA2E2128394F220020B395 /* UIImage + Extension.swift in Sources */,
 				52FA2E2328394F220020B395 /* NSDirectionalEdgeInsets + Extension.swift in Sources */,
 				52FA2E2628394F220020B395 /* UIColor + Extension.swift in Sources */,
@@ -671,12 +637,10 @@
 				52FA2E2C28394F220020B395 /* Double + Extension.swift in Sources */,
 				52FA2E2728394F220020B395 /* Date + Extension.swift in Sources */,
 				52FA2E5C283953EF0020B395 /* BaseCollectionViewCell.swift in Sources */,
-				52FA2DFF2838E3D50020B395 /* NewsCell.swift in Sources */,
 				52FA2E322839500A0020B395 /* RoundedUIImageView.swift in Sources */,
 				52FA2E7B283989220020B395 /* NewFeedItemCollectionViewCell.swift in Sources */,
 				52FA2E4F2839536F0020B395 /* HomeModel.swift in Sources */,
 				52FA2E2228394F220020B395 /* Array + Extension.swift in Sources */,
-				52E2337B283849EE005A0CEF /* FeedsManager.swift in Sources */,
 				52FA2E1E28394F220020B395 /* UIScrollView + Extension.swift in Sources */,
 				52FA2E66283956280020B395 /* AppScreens.swift in Sources */,
 			);
