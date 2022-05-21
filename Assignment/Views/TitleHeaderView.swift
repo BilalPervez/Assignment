@@ -24,7 +24,7 @@ class TitleHeaderView: UICollectionReusableView {
     private func configure() {
         addSubview(textLabel)
         textLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
-        textLabel.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        textLabel.textColor = UIColor.black
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         
         let inset: CGFloat = 10

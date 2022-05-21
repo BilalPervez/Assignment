@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,7 +16,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ErrorHandlerView" customModule="stock_ticker_app" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ErrorHandlerView" customModule="Assignment" customModuleProvider="target">
             <connections>
                 <outlet property="btnRetry" destination="1T0-nc-gZN" id="AXf-k7-INE"/>
                 <outlet property="btnRetryHeightConstraint" destination="Epc-ST-Cd5" id="wuf-uv-VDL"/>
@@ -32,7 +31,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="780"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_empty" translatesAutoresizingMaskIntoConstraints="NO" id="rBB-Sy-yRg">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_no_internet" translatesAutoresizingMaskIntoConstraints="NO" id="rBB-Sy-yRg">
                     <rect key="frame" x="51" y="234" width="312" height="312"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="rBB-Sy-yRg" secondAttribute="height" multiplier="1:1" id="Abg-AF-322"/>
@@ -50,9 +49,9 @@
                     <color key="textColor" red="0.023529411764705882" green="0.074509803921568626" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1T0-nc-gZN" customClass="RoundedCornerUIButton" customModule="stock_ticker_app" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1T0-nc-gZN" customClass="RoundedCornerUIButton" customModule="Assignment" customModuleProvider="target">
                     <rect key="frame" x="132" y="612.5" width="150" height="50"/>
-                    <color key="backgroundColor" red="0.25098039215686274" green="0.72941176470588232" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Epc-ST-Cd5"/>
                         <constraint firstAttribute="width" constant="150" id="rgu-yQ-Ruf"/>
@@ -99,9 +98,12 @@
         </designable>
     </designables>
     <resources>
-        <image name="ic_empty" width="352" height="266"/>
+        <image name="ic_no_internet" width="268" height="268"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -20,7 +20,7 @@ class StockPriceItemCollectionViewCell: BaseCollectionViewCell {
     func setupCell(with stockVo: StockVO?) {
         if let stockVo = stockVo {
             lblTitle.text = stockVo.stockName?.replacingOccurrences(of: "\"", with: "")
-            lblPrice.text = "$" + "\(stockVo.price?.rounded(toPlaces: 2) ?? 0.0)".replacingOccurrences(of: "-", with: "")
+            lblPrice.text = "$" + "\(stockVo.price?.rounded(toPlaces: 5) ?? 0.0)".replacingOccurrences(of: "-", with: "")
         }
     }
 }

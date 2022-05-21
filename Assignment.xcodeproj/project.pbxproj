@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4C5EE019F04AE465809D732C /* Pods_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543DDB1EBD5E773D307E8442 /* Pods_Assignment.framework */; };
 		52E2336628384675005A0CEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2336528384675005A0CEF /* AppDelegate.swift */; };
-		52E2336A28384675005A0CEF /* NewsFeedsAndStockTickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E2336928384675005A0CEF /* NewsFeedsAndStockTickerViewController.swift */; };
 		52E2336D28384675005A0CEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E2336B28384675005A0CEF /* Main.storyboard */; };
 		52E2336F28384676005A0CEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E2336E28384676005A0CEF /* Assets.xcassets */; };
 		52E2337228384676005A0CEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E2337028384676005A0CEF /* LaunchScreen.storyboard */; };
@@ -86,14 +85,12 @@
 		52FA2EA128398E7C0020B395 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52FA2E8F28398E7C0020B395 /* Poppins-SemiBold.ttf */; };
 		52FA2EA228398E7C0020B395 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52FA2E9028398E7C0020B395 /* Poppins-Italic.ttf */; };
 		52FA2EA328398E7C0020B395 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52FA2E9128398E7C0020B395 /* Poppins-MediumItalic.ttf */; };
-		52FA2EA5283992280020B395 /* abc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA2EA4283992280020B395 /* abc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		52E2336228384675005A0CEF /* Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E2336528384675005A0CEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E2336728384675005A0CEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		52E2336928384675005A0CEF /* NewsFeedsAndStockTickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedsAndStockTickerViewController.swift; sourceTree = "<group>"; };
 		52E2336C28384675005A0CEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52E2336E28384676005A0CEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52E2337128384676005A0CEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -171,7 +168,6 @@
 		52FA2E8F28398E7C0020B395 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		52FA2E9028398E7C0020B395 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
 		52FA2E9128398E7C0020B395 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
-		52FA2EA4283992280020B395 /* abc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = abc.swift; sourceTree = "<group>"; };
 		543DDB1EBD5E773D307E8442 /* Pods_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73FC546C0C969EE30BD60B8B /* Pods-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment.debug.xcconfig"; path = "Target Support Files/Pods-Assignment/Pods-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		FD2DC9268023493DCF9538C4 /* Pods-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment.release.xcconfig"; path = "Target Support Files/Pods-Assignment/Pods-Assignment.release.xcconfig"; sourceTree = "<group>"; };
@@ -228,7 +224,6 @@
 				52FA2E50283953EF0020B395 /* Base */,
 				52E2336528384675005A0CEF /* AppDelegate.swift */,
 				52E2336728384675005A0CEF /* SceneDelegate.swift */,
-				52E2336928384675005A0CEF /* NewsFeedsAndStockTickerViewController.swift */,
 				52E2336B28384675005A0CEF /* Main.storyboard */,
 				52E2336E28384676005A0CEF /* Assets.xcassets */,
 				52E2337028384676005A0CEF /* LaunchScreen.storyboard */,
@@ -335,7 +330,6 @@
 				52FA2E53283953EF0020B395 /* Cells */,
 				52FA2E56283953EF0020B395 /* ViewControllers */,
 				52FA2E59283953EF0020B395 /* Views */,
-				52FA2EA4283992280020B395 /* abc.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -651,7 +645,6 @@
 				52FA2E2B28394F220020B395 /* UIDevice + Extension.swift in Sources */,
 				52FA2E2028394F220020B395 /* String + Extension.swift in Sources */,
 				52FA2E0628391B470020B395 /* Feed.swift in Sources */,
-				52E2336A28384675005A0CEF /* NewsFeedsAndStockTickerViewController.swift in Sources */,
 				52FA2E43283952CC0020B395 /* ErrorType.swift in Sources */,
 				52FA2E34283950380020B395 /* RoundedCornerUIButton.swift in Sources */,
 				52FA2E40283952CC0020B395 /* ApiClient.swift in Sources */,
@@ -680,7 +673,6 @@
 				52FA2E5C283953EF0020B395 /* BaseCollectionViewCell.swift in Sources */,
 				52FA2DFF2838E3D50020B395 /* NewsCell.swift in Sources */,
 				52FA2E322839500A0020B395 /* RoundedUIImageView.swift in Sources */,
-				52FA2EA5283992280020B395 /* abc.swift in Sources */,
 				52FA2E7B283989220020B395 /* NewFeedItemCollectionViewCell.swift in Sources */,
 				52FA2E4F2839536F0020B395 /* HomeModel.swift in Sources */,
 				52FA2E2228394F220020B395 /* Array + Extension.swift in Sources */,
