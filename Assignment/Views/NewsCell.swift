@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 class NewsCell: UICollectionViewCell {
     
     
@@ -15,9 +15,14 @@ class NewsCell: UICollectionViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var newsImage: UIImageView!
     
-    func showStock(news: NewsFeed) {
+    func showNews(news: NewsFeed) {
         
+        lblTitle.text = news.title ?? ""
         
+        newsImage.sd_setImage(with: URL(string: news.urlToImage ?? ""), placeholderImage: UIImage(named: "placeholder.png"))
+
+     
+    
     }
     
 }

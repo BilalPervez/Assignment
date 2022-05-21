@@ -7,7 +7,7 @@
 
 import UIKit
 
-typealias FeedsDataSource = UICollectionViewDiffableDataSource<FeedsManager.Section, Stock>
+typealias FeedsDataSource = UICollectionViewDiffableDataSource<FeedsManager.Section, Feed>
 
 
 class NewsFeedsAndStockTickerViewController: UIViewController {
@@ -24,13 +24,16 @@ class NewsFeedsAndStockTickerViewController: UIViewController {
     
     private func setupView() {
         
-//        collectionView.register(TitleHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleHeaderView.reuseIdentifier)
+        collectionView.register(TitleHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleHeaderView.reuseIdentifier)
         
         collectionView.collectionViewLayout = configureCollectionViewLayout()
         configureDataSource()
         configureSnapshot()
         collectionView.delegate = self
         self.navigationController?.hidesBarsOnSwipe = true
+        
+        
+        
     }
 
 
@@ -67,13 +70,14 @@ extension NewsFeedsAndStockTickerViewController {
         item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
         
         //create group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.2))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.1))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         //create section
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        section.boundarySupplementaryItems = getHeader()
         
         return section
     }
@@ -85,13 +89,13 @@ extension NewsFeedsAndStockTickerViewController {
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         //create group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.2))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.2))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         //create section
         let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        section.orthogonalScrollingBehavior = .groupPaging
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 2, bottom: 10, trailing: 2)
         
         section.boundarySupplementaryItems = getHeader()
         
@@ -132,79 +136,101 @@ extension NewsFeedsAndStockTickerViewController {
 extension NewsFeedsAndStockTickerViewController {
     
     func configureDataSource() {
-        dataSource = FeedsDataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, stock: Stock) -> UICollectionViewCell? in
+        dataSource = FeedsDataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, item: Any) -> UICollectionViewCell? in
             
             let reuseIdentifier: String
             
             switch indexPath.section {
+                
             case 0: reuseIdentifier =  StockCell.reuseIdentifier
-//            case 1: reuseIdentifier = PreviewCell.reuseIdentifier
+            case 1: reuseIdentifier =  NewsCell.reuseIdentifier
 //            case 2: reuseIdentifier = RecomentationsCell.reuseIdentifier
             default: reuseIdentifier = StockCell.reuseIdentifier
             }
             
-            
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as?  StockCell else {
-                return nil
-            }
-            
+            if let feed = item as? Feed {
+                
+                if let stock = feed.stock {
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as?  StockCell else {
+                        return nil
+                    }
+                    
+                    cell.showStock(stock: stock)
 
-            let section = FeedsManager.Section.allCases[indexPath.section]
-            cell.showStock(stock: FeedsManager.feeds[section]?[indexPath.item] as! Stock)
+    //                let section = FeedsManager.Section.allCases[indexPath.section]
+    //                cell.showStock(stock: (FeedsManager.feeds[section]?[indexPath.item])!)
+                    
+                    
+                    return cell
+                    
+                }else if let newFeed = feed.news {
+                
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as?  NewsCell else {
+                        return nil
+                    }
+                    cell.showNews(news: newFeed)
+
+    //                let section = FeedsManager.Section.allCases[indexPath.section]
+    //                cell.showNews(news: FeedsManager.feeds[section]?[indexPath.item])
+                    
+                    return cell
+                
+                }else{
+                    
+                    fatalError("Couldn't Create New Cell")
+
+                }
             
+           
+            }else{
+                fatalError("Couldn't Create New Cell")
+            }
+        
+    }
+        
+        
+        
+        dataSource.supplementaryViewProvider = { [weak self] (collectionView: UICollectionView, kind: String, indextPath: IndexPath) -> UICollectionReusableView? in
             
-            return cell
+            if let self = self, let headerSupplementaryView =
+                collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader
+                                                                , withReuseIdentifier: TitleHeaderView.reuseIdentifier, for: indextPath) as? TitleHeaderView {
+                let section = self.dataSource.snapshot().sectionIdentifiers[indextPath.section]
+                headerSupplementaryView.textLabel.text = section.rawValue
+                
+                return headerSupplementaryView
+            }
+            return nil
         }
         
-//        dataSource.supplementaryViewProvider = { [weak self] (collectionView: UICollectionView, kind: String, indextPath: IndexPath) -> UICollectionReusableView? in
-//
-//            if let self = self, let headerSupplementaryView =
-//                collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader
-//                                                                , withReuseIdentifier: TitleHeaderView.reuseIdentifier, for: indextPath) as? TitleHeaderView {
-//                let section = self.dataSource.snapshot().sectionIdentifiers[indextPath.section]
-//                headerSupplementaryView.textLabel.text = section.rawValue
-//
-//                return headerSupplementaryView
-//            }
-//            return nil
-//        }
+    
     }
     
     
     func configureSnapshot() {
-        var currentSnapshot = NSDiffableDataSourceSnapshot<FeedsManager.Section, Stock> ()
+        var currentSnapshot = NSDiffableDataSourceSnapshot<FeedsManager.Section, Feed> ()
         
         FeedsManager.Section.allCases.forEach{ collection in
             currentSnapshot.appendSections([collection])
             if let feeds = FeedsManager.feeds[collection] {
-                currentSnapshot.appendItems(feeds as! [Stock])
+                currentSnapshot.appendItems(feeds)
             }
         }
         
         dataSource.apply(currentSnapshot, animatingDifferences: false)
     }
+        
     
+
     
-//    func configureSnapshot() {
-//        var currentSnapshot = NSDiffableDataSourceSnapshot<FeedsManager.Section, Stock> ()
-//
-//        FeedsManager.Section.allCases.forEach{ collection in
-//            currentSnapshot.appendSections([collection])
-//            if let feed = FeedsManager.feeds[collection] {
-//                currentSnapshot.appendItems(feed)
-//            }
-//        }
-//
-//        dataSource.apply(currentSnapshot, animatingDifferences: false)
-//    }
 }
 
 // MARK: - UIColeectionViewDelegate -
 
 extension NewsFeedsAndStockTickerViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let stock = dataSource.itemIdentifier(for: indexPath)
-        print(stock?.stock ?? "ovietitle is nil")
+        let feed = dataSource.itemIdentifier(for: indexPath)
+        print(feed?.stock != nil ? feed?.stock?.stock ?? "stock title is nil" : feed?.news?.title ?? "stock title is nil")
     }
 }
 
